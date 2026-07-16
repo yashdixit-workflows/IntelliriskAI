@@ -1,0 +1,28 @@
+﻿{
+  "mcpServers": {
+    "google-sheets": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gdrive"
+      ],
+      "env": {
+        "GDRIVE_CLIENT_ID": "YOUR_GOOGLE_CLIENT_ID",
+        "GDRIVE_CLIENT_SECRET": "YOUR_GOOGLE_CLIENT_SECRET",
+        "GDRIVE_REDIRECT_URI": "http://localhost:3000/oauth2callback"
+      },
+      "description": "Google Drive + Sheets MCP server. Allows reading/writing Google Sheets. Replace credentials with your OAuth2 app credentials from https://console.cloud.google.com"
+    },
+    "google-sheets-service-account": {
+      "command": "python",
+      "args": [
+        "-m",
+        "creditguard_mcp.google_sheets_server"
+      ],
+      "env": {
+        "GOOGLE_SERVICE_ACCOUNT_JSON": "x:\\creditguard-ai\\config\\service_account.json"
+      },
+      "description": "Service account based Google Sheets access for IntelliRisk AI. Place your service_account.json in x:\\creditguard-ai\\config\\"
+    }
+  }
+}
